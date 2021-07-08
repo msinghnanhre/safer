@@ -16,20 +16,29 @@ function BarChart({data}) {
                             'rgba(229, 198, 70, 10)',
                             'rgba(0, 96, 151, 10)',
                         ],
+                  
                     },
-                    ]
+                    ],
                 }}
+            
                 options={{
                     maintainAspectRatio: false,
-                    //fill: true,
+                    scales: {
+                      yAxes: [
+                        {
+                          ticks: {
+                            beginAtZero: true,
+                          },
+                        },
+                      ],
+                    },
                     legend: {
-                        display: true,
-                        labels: {
-                            fontColor: "blue",
-                            fontSize: 18
-                        }
-                    }
-                }}
+                      labels: {
+                        fontSize: 12,
+                        fontColor: "white"
+                      },
+                    },
+                  }}
             />
             <h5 style={{padding: "1rem"}}>Bar Graph</h5>
         </div>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Pie } from "react-chartjs-2"
+import { Pie, defaults  } from "react-chartjs-2"
 
 
 
@@ -16,6 +16,7 @@ function PieChart({ data }) {
                         label: "Breaches",
                         strokeColor: "rgba(255,255,255,1)",
                         fillColor: "rgba(50,182,93,0.5)",
+                        
                         data: [data.email.length, data.networkServer.length, data.others.length],
                         backgroundColor: [
                             'rgba(255, 99, 132, 10)',
@@ -26,19 +27,23 @@ function PieChart({ data }) {
                     },
                     ]
                 }}
-                
+         
                 options={{
-                    scale: {
-                        label: {
-                            color: "#ffffff",
-                       } 
-                    },
-                    maintainAspectRatio: false,
-                        display: true,
+
+                    scales: {
+                        yAxes: [
+                          {
+                            ticks: {
+                              beginAtZero: true,
+                            },
+                          },
+                        ],
+                      },
+            
                         legend: {
                             labels: {
-                                fontColor: "#ffffff",
-                                fontSize: 18
+                                fontSize: 10,
+                                fontColor: "white", 
                             }
                         }
                 }}
