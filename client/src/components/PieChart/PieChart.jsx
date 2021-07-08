@@ -13,10 +13,7 @@ function PieChart({ data }) {
                 data={{
                     labels: ['Email', 'Network', 'others'],
                     datasets: [{
-                        label: "Breaches",
-                        strokeColor: "rgba(255,255,255,1)",
-                        fillColor: "rgba(50,182,93,0.5)",
-                        
+                        label: "Breaches", 
                         data: [data.email.length, data.networkServer.length, data.others.length],
                         backgroundColor: [
                             'rgba(255, 99, 132, 10)',
@@ -43,7 +40,7 @@ function PieChart({ data }) {
                         legend: {
                             labels: {
                                 fontSize: 10,
-                                fontColor: "white", 
+                                fontColor: "#ffffff", 
                             }
                         }
                 }}

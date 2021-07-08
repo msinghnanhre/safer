@@ -219,8 +219,8 @@ export class App extends Component {
           <p className="app__chart-text"><span className="app__chart-span">{this.individualsAffectedThroughEmail()}</span>People were affected By Email Breach</p>
         </div>
         <p className="app__body-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate</p>
-          {/* <Affected data={this.state.dataSet} />
-          <ServicesList data={this.state.dataSet} state={this.state.searched}/> */}
+          {/* <Affected data={this.state.dataSet} /> */}
+          <ServicesList data={this.state.dataSet} state={this.state.searched}/>
         <Protect />
         <Footer />
       </section>

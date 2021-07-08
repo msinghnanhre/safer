@@ -31,16 +31,17 @@ function BarChart({data}) {
                           },
                         },
                       ],
-                    },
+                  },
                     legend: {
                       labels: {
                         fontSize: 12,
-                        fontColor: "white"
+                        fontColor: "white",
+                        backgroundColor:"#ffffff",
                       },
                     },
                   }}
             />
-            <h5 style={{padding: "1rem"}}>Bar Graph</h5>
+            <h5 style={{paddingTop: "2.5rem"}}>Bar Graph</h5>
         </div>
     )
 }

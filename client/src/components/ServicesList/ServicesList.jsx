@@ -1,19 +1,23 @@
 import {Component} from 'react'
 
 class ServicesList extends Component {
-
+    state = {
+        stores: ["a", "b"]
+    }
     
 
-    servicesBreachedInState = (dataSet, state) => {
-        const serviceList = []
+    servicesBreachedInState = () => {
         this.props.data.map(item => {
             if (item.State === "DC") {
-                serviceList.push(item.Name)
+                return <p>{item}</p>
             }
+            return;
         })
-        serviceList.map(item => {
-            <p>{item}</p>
-        })
+        // serviceList.map(item => {
+        //     this.setState({
+        //             stores: [...this.state.stores, ]
+        //         })
+        // })
     }
 
     render() {
