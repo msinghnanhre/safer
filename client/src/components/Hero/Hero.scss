@@ -2,12 +2,18 @@
 
 
 .hero{
-    text-align: left;
-    margin: 2rem 5rem;
-    color: white;
-    height: 20vh;
+    @include flex-row{
+        justify-content: space-between;
+        align-items: center;
+        padding: 2rem 5rem;
+    }
+    &__left{
+        text-align: left;
+        color: white;
+        height: 20vh;
+    }
     &__text{
-        max-width: 25%;
+        max-width: 50%;
     }
 
     &__button{

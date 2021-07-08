@@ -10,10 +10,11 @@
 }
 
 .content{
-    margin: 6rem auto;
+    margin: 4rem auto;
     @include flex-row{
         width: 100%;
         justify-content:center;
+        align-items: center;
     }
     &__img{
         width: 40%;
@@ -22,7 +23,7 @@
     &__body{
         width: 40%;
         padding: 2rem;
-
+        
         &-img{
             transform: scale(.85);
         }
