@@ -1,38 +1,22 @@
 
 import './App.scss';
 import React, { Component } from 'react'
+import LandingPage from './components/LandingPage/LandingPage';
+import {Link, BrowserRouter, Route, Switch} from 'react-router-dom'
+import Header from './components/Header/Header'
 
-export class App extends Component {
-
-  state = {
-    location: ["Canada", "  ", "Philadelphia"],
-    searched: "null"
-  }
-
-  submitHandler = (e) => {
-    e.preventDefault()
-    this.setState({
-      searched: e.target.search.value.toUpperCase(),
-    })
-    e.target.search.value = ""
-  }
-
-  render() {
-    return (
-      <section>
-      <form onSubmit = {this.submitHandler}>
-        <input className="search" name = "search"></input>
-        <button>SEARCH</button>
-      </form>
-      <div>
-        <p>
-          {this.state.location.filter((location)=> location.toUpperCase() === this.state.searched)}
-        </p>
-      </div>
-      </section>
-    )
-  }
+function App() {
+  return (
+    <BrowserRouter>
+    <Header/>
+      <Switch>
+      <Route exact path = "/" component = {LandingPage}/>
+      </Switch>
+    </BrowserRouter>
+ 
+  )
 }
 
 export default App
+
 
