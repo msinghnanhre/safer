@@ -198,7 +198,7 @@ export class App extends Component {
 
         <Search />
                 <div className="white">
-
+      <h3 className="white__subtitle">Find out how you are affected in your area</h3>
         <form
           onSubmit={this.submitHandler}
           className="app__form"
@@ -221,7 +221,7 @@ export class App extends Component {
             <BarChart data={this.state} />
           <p className="app__chart-text"><span className="app__chart-span">{this.individualsAffectedThroughEmail()}</span>People were affected By Email Breach</p>
         </div>
-        <p className="app__body-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate</p>
+        <p className="app__body-text">Take the steps to protect youself against an email breach so you don’t fall victim.</p>
           {/* <Affected data={this.state.dataSet} />
           <ServicesList data={this.state.dataSet} state={this.state.searched}/> */}
                   </div>
