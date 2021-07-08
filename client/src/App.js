@@ -26,6 +26,7 @@ export class App extends Component {
   componentDidMount = () => {
     axios.get('http://localhost:8080/api/data/breach')
       .then(res => {
+        console.log(res.data[0])
           this.setState({
             email: res.data[0],
             networkServer: res.data[1],
