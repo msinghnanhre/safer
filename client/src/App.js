@@ -10,6 +10,7 @@ import Header from "./components/Header/Header"
 import Hero from "./components/Hero/Hero"
 import Search from "./components/Search/Search"
 import Footer from "./components/Footer/Footer"
+import lottie from 'lottie-web'
 
 export class App extends Component {
 
@@ -21,7 +22,7 @@ export class App extends Component {
     others: [],
     dataSet: [],
 
-    searched: "every state combined. Search a state to get started.",
+    searched:null,
     selectedState: null,
     location: ["canada", "philadelphis"]
 
@@ -101,6 +102,19 @@ export class App extends Component {
     }
 }
 
+  abbrdName = (name) => {
+    if (name) {
+      return (
+        <p> You are currently viewing information on the state of {    this.abbrState(name, "name")
+    }</p>
+      )
+    } else if (!name){
+      return (
+        <p> You are currently viewing information on all states combined</p>
+      )
+    }
+  }
+
   componentDidUpdate (prevProps, prevState) {
     if(prevState.selectedState === this.state.selectedState && prevState.searched !== this.state.searched) {
       console.log("hi")
@@ -139,17 +153,24 @@ export class App extends Component {
   }
 
   submitHandler = (e) => {
+
     e.preventDefault()
     const value = e.target.search.value
-    if(value.length === 2) {
+    if(value.length === 2 ) {
       this.setState({       
          searched: value.toUpperCase(),
       })
-    } else {
+    } else if (this.abbrState(value, 'abbr') === undefined){
+      document.location.reload() 
+      alert("No such state exists")
+      this.setState({       
+        searched: value.toUpperCase(),
+     })
+    }else {
       this.setState({
         searched: this.abbrState(value, 'abbr'),
       })
-    }
+    } 
  
     e.target.search.value = ""
   }
@@ -185,7 +206,7 @@ export class App extends Component {
 
         <div className="app__text">
             <p  className="app__text-content">
-             You are currently viewing information on the state of {this.abbrState(this.state.searched, 'name')}
+  {this.abbrdName(this.state.searched)}
             </p>
         </div>
 

@@ -27,7 +27,7 @@ function PieChart({ data }) {
                     },
                     ]
                 }}
-       
+         
                 options={{
 
                     scales: {
