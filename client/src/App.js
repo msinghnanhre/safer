@@ -1,12 +1,14 @@
-import { Component} from"react"
 import './App.scss';
 import React, { Component } from 'react'
+import LineChart from "./components/LineChart/LineChart"
+import PieChart from "./components/PieChart/PieChart"
 
 export class App extends Component {
 
   state = {
     location: ["Canada", "  ", "Philadelphia"],
-    searched: "null"
+    searched: "null",
+    data: [13, 11, 5, 7, 5, 3]
   }
 
   submitHandler = (e) => {
@@ -21,14 +23,16 @@ export class App extends Component {
     return (
       <section>
       <form onSubmit = {this.submitHandler}>
-        <input className="search" name = "search"></input>
+        <input className="search" name = "search" placeholder="Enter your city"></input>
         <button>SEARCH</button>
       </form>
       <div>
         <p>
           {this.state.location.filter((location)=> location.toUpperCase() === this.state.searched)}
         </p>
-      </div>
+        </div>
+        <LineChart data={this.state.data} />
+        <PieChart data={this.state.data} />
       </section>
     )
   }
