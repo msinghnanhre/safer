@@ -19,10 +19,10 @@ function Footer() {
                 <li className="footer__listItem">Resources</li>
             </ul>
             <div className="footer__bottom">
-                <img src={ellipse1} alt="logo1" />
-                <img src={ellipse2} alt="logo2" />
-                <img src={ellipse3} alt="logo3" />
-                <img src={ellipse4} alt="logo4" />
+                <img className="footer__icons" src={ellipse1} alt="logo1" />
+                <img className="footer__icons" src={ellipse2} alt="logo2" />
+                <img className="footer__icons" src={ellipse3} alt="logo3" />
+                <img className="footer__icons" src={ellipse4} alt="logo4" />
             </div>
         </div>
     )
