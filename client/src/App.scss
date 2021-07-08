@@ -1,4 +1,43 @@
-.App {
+@use "./partials/mixins" as *;
+
+.app {
   text-align: center;
+  box-sizing: border-box;
+  //background: rgb(2,0,36);
+  background: linear-gradient(180deg, #17093F 0%, #ffffff 100%);
+
+  &__body-text{
+    font-size: 1.25rem;
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  &__chartData{
+    @include flex-row{
+      justify-content: space-evenly;
+      height: 500px;
+      width: 100%;
+    }
+    margin-top: 5rem;
+    padding: 7rem;
+  }
+  &__pieChart{
+    width: 300px;
+  }
+  &__chart{
+      &-text{
+      width: 20vw;
+      align-self: flex-end;
+      font-weight: bold;
+      margin-bottom: 7rem;
+      color: rgb(73, 64, 64);
+    }
+    &-span{
+      color: black;
+      font-weight: bold;
+      font-size: 3rem;
+      opacity: 1;
+    }
+  }
 }
 

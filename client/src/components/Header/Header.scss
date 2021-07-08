@@ -1,0 +1,18 @@
+@use "../../partials/mixins" as *;
+
+.header{
+    padding: 2rem 5rem;
+
+    @include flex-row{
+     justify-content:space-between;
+    }
+
+    &__search{
+        @include btn{
+            background-color: #8FB9E0;
+            padding: 1.25rem;
+            width: 10rem;
+            border-radius: 50px;
+        }
+    }
+}

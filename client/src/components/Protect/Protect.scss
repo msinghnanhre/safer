@@ -1,0 +1,37 @@
+@use "../../partials/mixins" as *;
+
+.protection{
+    margin: 7rem auto;
+    &__title{
+        font-size: 3rem;
+        color: #000000;
+        margin: 2rem;
+    }
+}
+
+.content{
+    margin: 6rem auto;
+    @include flex-row{
+        width: 100%;
+        justify-content:center;
+    }
+    &__img{
+        width: 40%;
+        padding: 2rem;
+    }
+    &__body{
+        width: 40%;
+        padding: 2rem;
+
+        &-img{
+            transform: scale(.85);
+        }
+        &-title{
+            margin: 2rem auto;
+        }
+        &-btn{
+            @include btn;
+            
+        }
+    }
+}

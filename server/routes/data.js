@@ -3,6 +3,7 @@ const router = express.Router()
 //data file
 const data = require('../data/data.json')
 
+//filter data based on method of breach
 let email = []
 let networkServer = []
 let others = []
@@ -20,7 +21,16 @@ data.map(item => {
 })
 
 router.get("/data", ((req, res) => {
+    res.status(200).json(data)
+}))
+
+
+// get data based on breach method
+router.get("/data/breach", ((req, res) => {
     res.status(200).json(dataBasedOnBreach)
 }))
+
+
+
 
 module.exports = router;
