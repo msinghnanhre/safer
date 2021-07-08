@@ -2,25 +2,41 @@
 
 
 .hero{
+    display: flex;
+    flex-direction: column;
+    @include tablet {
     @include flex-row{
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-start;
         padding: 2rem 5rem;
-    }
+        justify-content: space-between;
+    }}
+    
+ 
     &__left{
+        padding-left: 30px;
         text-align: left;
-        color: white;
+        color: #17093F;
         height: 20vh;
     }
     &__text{
         max-width: 50%;
+        color: white;
+        @include tablet {
+        font-size: 2rem;}
     }
 
     &__button{
+        color: black;
         @include btn{
-            background-color: #0077E5;
+            background-color: #72BBE3;
             margin-left: 0;
             margin-top: 3rem;
+            width: 70%;
+            height: 3rem;
+
+            border-radius: 50px;
+
         }
     }
 }

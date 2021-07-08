@@ -11,7 +11,6 @@
     height: 2.2rem;
     justify-content: center;
     margin:20px 100px;
-
   }
   
   &__search {
@@ -37,8 +36,9 @@
 }
   
   &__text{
+    align-self: baseline;
     &-content{
-      color: white;
+      color: black;
       font-weight: 500;
       font-size: 20px;
       padding-top: 20px;
@@ -57,19 +57,27 @@
       justify-content: space-evenly;
       height: 500px;
       width: 100%;
+      display: none;
+      @include tablet {
+        display: flex;
+      }
     }
-    margin-top: 5rem;
+    
+    background-color: white;
+    margin-top: 1rem;
     padding: 7rem;
   }
   &__pieChart{
-    width: 300px;
+    width: 20vw;
   }
   &__chart{
       &-text{
+        display: flex;
+        flex-direction: column;
       width: 20vw;
       align-self: flex-end;
       font-weight: bold;
-      margin-bottom: 7rem;
+      margin-bottom: 4.5rem;
       color: rgb(73, 64, 64);
     }
     &-span{
@@ -83,4 +91,11 @@
   }
 }
 
+.barchart {
+  height: 200px;
+}
 
+.white {
+  background-color: white;
+  padding: 40px 0;
+}

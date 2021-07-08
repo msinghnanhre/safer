@@ -4,8 +4,8 @@ import "./Search.scss"
 function Search() {
     return (
         <div className="search">
-            <h2 className="search__title">What is data privacy? Learn now how a data breach can impact your life.</h2>
-            <h3 className="search__subtitle">Find out how you are affected in your area</h3>
+            <h1 className="search__title">What is data privacy? </h1><h2 className="search-small">Learn now how a data breach can impact your life.</h2>
+ 
              
         </div>
     )

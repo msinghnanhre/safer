@@ -14,7 +14,7 @@ function Protect() {
                     <img className="content__body-img" src={safety} alt="an icon refering to safety"/>
                     <h4 className="content__body-title">Safety Tips</h4>
                     <p className="content__body-text">Data privacy is more important than ever. Learn the best practices on how you can protect youself </p>
-                    <button className="content__body-btn">Get Started</button>
+                    <a href = "https://www.paubox.com/blog/top-3-ways-email-gets-hacked/"className="content__body-btn">Get Started</a>
                 </div>
             </div>
 

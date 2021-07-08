@@ -20,7 +20,6 @@ function BarChart({data}) {
                     },
                     ],
                 }}
-            
                 options={{
                     maintainAspectRatio: false,
                     scales: {
