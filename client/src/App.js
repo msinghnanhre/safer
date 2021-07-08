@@ -24,7 +24,6 @@ export class App extends Component {
 
     searched:null,
     selectedState: null,
-    location: ["canada", "philadelphis"]
 
   }
 
