@@ -7,19 +7,36 @@ function PieChart({data}) {
         <div>
             <Pie
                 data={{
-                    labels: ['Red'],
+                    labels: ['Email', 'Network', 'others'],
                     datasets: [{
-                        label: "something",
-                        data: data,
+                        label: "Breaches",
+                        data: [data.email.length, data.networkServer.length, data.others.length],
                         backgroundColor: [
-                            'rgba(255, 100, 64, 1)'
+                            'rgba(255, 99, 132, 10)',
+                            'rgba(229, 198, 70, 10)',
+                            'rgba(0, 96, 151, 10)',
                         ],
-                    }]
+                    },
+                        // {
+                        //     label: "something",
+                        //     data: [email.length, , 6, 7, 3],
+                        //     backgroundColor: [
+                        //         'rgba(46, 102, 229, 1)'
+                        //     ],
+                        // }
+                    ]
                 }}
-                height={300}
-                width={500}
+                height={150}
+                width={100}
                 options={{
-                    maintainAspectRatio: false
+                    maintainAspectRatio: false,
+                    // fill: true,
+                    legend: {
+                        display: true,
+                        labels: {
+                            fontColor: 'red'
+                        }
+                    }
                 }}
             />
         </div>

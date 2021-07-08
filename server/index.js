@@ -2,7 +2,9 @@ const express = require('express')
 const app = express()
 const cors = require('cors')
 
-const cityRoute = require("./routes/city")
+
+
+const dataRoute = require("./routes/data")
 
 //port
 require("dotenv").config();
@@ -15,7 +17,7 @@ app.use(cors())
 
 
 //data routes goes here
-app.use("/api", cityRoute)
+app.use("/api", dataRoute)
 
 app.listen(port, () => {
     console.log(`Listening at port ${port}`)
