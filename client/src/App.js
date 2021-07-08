@@ -1,39 +1,38 @@
 import { Component} from"react"
 import './App.scss';
-import axios from "axios"
+import React, { Component } from 'react'
 
+export class App extends Component {
 
-class App extends Component {
   state = {
-    city: ""
+    location: ["Canada", "  ", "Philadelphia"],
+    searched: "null"
   }
 
-  onChange = (e) => {
-    this.setState({[e.target.name]:e.target.value})
-  }
-
-  onClick = () => {
-    console.log(this.state.city)
-    axios.post('http://localhost:8080/api/city', {
-      city: this.state.city,
-    }).then(res => {
-      console.log(res)
-    }).catch(err => {
-      console.log(err)
+  submitHandler = (e) => {
+    e.preventDefault()
+    this.setState({
+      searched: e.target.search.value.toUpperCase(),
     })
+    e.target.search.value = ""
   }
 
   render() {
-    console.log(this.state.city)
     return (
-      <div className="App">
-        <header className="App-header">
-          <input type="text" name="city" placeholder="Enter your city" onChange={e => { this.onChange(e) }} />
-          <button onClick={this.onClick}>Search</button>
-        </header>
+      <section>
+      <form onSubmit = {this.submitHandler}>
+        <input className="search" name = "search"></input>
+        <button>SEARCH</button>
+      </form>
+      <div>
+        <p>
+          {this.state.location.filter((location)=> location.toUpperCase() === this.state.searched)}
+        </p>
       </div>
-    );
+      </section>
+    )
   }
 }
 
-export default App;
+export default App
+
