@@ -1,6 +1,6 @@
 import React from 'react'
 import { Pie, defaults  } from "react-chartjs-2"
-
+import './PieChart.scss'
 
 
 function PieChart({ data }) {
@@ -8,7 +8,7 @@ function PieChart({ data }) {
         console.log(data)
     }
     return (
-        <div>
+        <div className="pie">
             <Pie
                 data={{
                     labels: ['Email', 'Network', 'others'],
@@ -27,7 +27,7 @@ function PieChart({ data }) {
                     },
                     ]
                 }}
-         
+                
                 options={{
 
                     scales: {
@@ -48,7 +48,7 @@ function PieChart({ data }) {
                         }
                 }}
             />
-            <h5 style={{ padding: "1rem" }}>Pie Chart</h5>
+            <h5 style={{ padding: "2.4rem" }}>Pie Chart</h5>
         </div>
     )
 }

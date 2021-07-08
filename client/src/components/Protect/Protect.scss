@@ -32,7 +32,10 @@
         }
         &-btn{
             @include btn;
-            
+            text-decoration: none;
+            position: relative;
+            top: 16px;
+            min-width: 3rem;
         }
     }
 }

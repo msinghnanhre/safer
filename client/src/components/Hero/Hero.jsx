@@ -16,9 +16,9 @@ function Hero() {
         <section className="hero">
             <div className="hero__left">
                 <h3 className="hero__text">In the last year alone  __% of Americans have fallen victim to identity theft.</h3>
-                <button className="hero__button">SEARCH</button>
+                <button className="hero__button">Find out how your state is affected</button>
             </div>
-            <Lottie options={hackerfile} height={300} width={400} />
+            <Lottie className= "hero__img"options={hackerfile} height={300} width={400} />
         </section>
     )
 }
