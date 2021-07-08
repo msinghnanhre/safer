@@ -14,13 +14,28 @@ import Footer from "./components/Footer/Footer"
 export class App extends Component {
 
   state = {
-    location: ["Canada", "  ", "Philadelphia"],
-    searched: "null",
+  
     dataBasedOnBreach: [],
     email: [],
     networkServer: [],
     others: [],
-    dataSet: []
+    dataSet: [],
+
+    searched: null,
+    selectedObject: null,
+    location: [{name: "Canada", problem: "justin trudeau"}, {name: "Philadelphia", problem: "something about cheese steaks"}, {name: "South Korea", problem: "too much traffic"}],
+
+  }
+
+
+
+
+  componentDidUpdate (prevProps, prevState) {
+    if(prevState.selectedObject === this.state.selectedObject && prevState.searched !== this.state.searched) {
+      this.setState({
+        selectedObject: this.state.location.filter((location)=> location.name.toUpperCase() === this.state.searched)[0]
+      })
+    }
   }
 
   componentDidMount = () => {
@@ -60,6 +75,7 @@ export class App extends Component {
   }
 
   render() {
+    
     return (
       <section className="app">
         <Header />
