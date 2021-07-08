@@ -1,0 +1,20 @@
+@use "../../partials/mixins" as *;
+
+
+.hero{
+    text-align: left;
+    margin: 2rem 5rem;
+    color: white;
+    height: 20vh;
+    &__text{
+        max-width: 25%;
+    }
+
+    &__button{
+        @include btn{
+            background-color: #0077E5;
+            margin-left: 0;
+            margin-top: 3rem;
+        }
+    }
+}

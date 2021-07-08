@@ -1,0 +1,24 @@
+@use "../../partials/mixins" as *;
+
+.footer{
+    background-color: #17093F;
+    height: 10rem;
+
+    &__list{
+        @include flex-row{
+            justify-content: space-evenly;
+        }
+        color:white;
+        list-style-type: none;
+        padding: 4rem 0;
+        //border-bottom: 1px solid gray;
+
+    }
+    &__bottom{
+        padding:4rem;
+        background-color:#17093F
+    }
+    &__icons{
+        margin: 0 1rem;
+    }
+}
