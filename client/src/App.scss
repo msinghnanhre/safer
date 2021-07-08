@@ -36,7 +36,16 @@
     color: white;
 }
   
-
+  &__text{
+    &-content{
+      color: white;
+      font-weight: 500;
+      font-size: 20px;
+      padding-top: 20px;
+      position: relative;
+      top: 10px;
+    }
+  }
   &__body-text{
     font-size: 1.25rem;
     width: 80%;

@@ -21,19 +21,99 @@ export class App extends Component {
     others: [],
     dataSet: [],
 
-    searched: null,
-    selectedObject: null,
-    location: [{name: "Canada", problem: "justin trudeau"}, {name: "Philadelphia", problem: "something about cheese steaks"}, {name: "South Korea", problem: "too much traffic"}],
+    searched: "every state combined. Search a state to get started.",
+    selectedState: null,
+    location: ["canada", "philadelphis"]
 
   }
 
 
 
+   abbrState = (input, to) => {
+    
+    var states = [
+        ['Arizona', 'AZ'],
+        ['Alabama', 'AL'],
+        ['Alaska', 'AK'],
+        ['Arkansas', 'AR'],
+        ['California', 'CA'],
+        ['Colorado', 'CO'],
+        ['Connecticut', 'CT'],
+        ['Delaware', 'DE'],
+        ['Florida', 'FL'],
+        ['Georgia', 'GA'],
+        ['Hawaii', 'HI'],
+        ['Idaho', 'ID'],
+        ['Illinois', 'IL'],
+        ['Indiana', 'IN'],
+        ['Iowa', 'IA'],
+        ['Kansas', 'KS'],
+        ['Kentucky', 'KY'],
+        ['Louisiana', 'LA'],
+        ['Maine', 'ME'],
+        ['Maryland', 'MD'],
+        ['Massachusetts', 'MA'],
+        ['Michigan', 'MI'],
+        ['Minnesota', 'MN'],
+        ['Mississippi', 'MS'],
+        ['Missouri', 'MO'],
+        ['Montana', 'MT'],
+        ['Nebraska', 'NE'],
+        ['Nevada', 'NV'],
+        ['New Hampshire', 'NH'],
+        ['New Jersey', 'NJ'],
+        ['New Mexico', 'NM'],
+        ['New York', 'NY'],
+        ['North Carolina', 'NC'],
+        ['North Dakota', 'ND'],
+        ['Ohio', 'OH'],
+        ['Oklahoma', 'OK'],
+        ['Oregon', 'OR'],
+        ['Pennsylvania', 'PA'],
+        ['Rhode Island', 'RI'],
+        ['South Carolina', 'SC'],
+        ['South Dakota', 'SD'],
+        ['Tennessee', 'TN'],
+        ['Texas', 'TX'],
+        ['Utah', 'UT'],
+        ['Vermont', 'VT'],
+        ['Virginia', 'VA'],
+        ['Washington', 'WA'],
+        ['West Virginia', 'WV'],
+        ['Wisconsin', 'WI'],
+        ['Wyoming', 'WY'],
+    ];
+
+    if (to == 'abbr'){
+        input = input.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+        for(let i = 0; i < states.length; i++){
+            if(states[i][0] == input){
+                return(states[i][1]);
+            }
+        }    
+    } else if (to == 'name'){
+        input = input.toUpperCase();
+        for(let i = 0; i < states.length; i++){
+            if(states[i][1] == input){
+                return(states[i][0]);
+            }
+        }    
+    }
+}
 
   componentDidUpdate (prevProps, prevState) {
-    if(prevState.selectedObject === this.state.selectedObject && prevState.searched !== this.state.searched) {
-      this.setState({
-        selectedObject: this.state.location.filter((location)=> location.name.toUpperCase() === this.state.searched)[0]
+    if(prevState.selectedState === this.state.selectedState && prevState.searched !== this.state.searched) {
+      console.log("hi")
+      axios.get('http://localhost:8080/api/data/breach')
+      .then(res => {
+        console.log(res.data[0])
+          this.setState({
+            email: res.data[0].filter((object) => object.State.toUpperCase() === this.state.searched),
+            networkServer: res.data[1].filter((object) => object.State.toUpperCase() === this.state.searched),
+            others: res.data[2].filter((object) => object.State.toUpperCase() === this.state.searched)
+          })
+      }).catch(err => {
+      console.log(err)
       })
     }
   }
@@ -60,9 +140,17 @@ export class App extends Component {
 
   submitHandler = (e) => {
     e.preventDefault()
-    this.setState({
-      searched: e.target.search.value.toUpperCase(),
-    })
+    const value = e.target.search.value
+    if(value.length === 2) {
+      this.setState({       
+         searched: value.toUpperCase(),
+      })
+    } else {
+      this.setState({
+        searched: this.abbrState(value, 'abbr'),
+      })
+    }
+ 
     e.target.search.value = ""
   }
 
@@ -75,7 +163,13 @@ export class App extends Component {
   }
 
   render() {
-    
+    // if(!this.state.selectedState) {
+    //   return (
+    //     <div>
+    //       loading
+    //     </div>
+    //   )
+    // }
     return (
       <section className="app">
         <Header />
@@ -85,13 +179,13 @@ export class App extends Component {
           onSubmit={this.submitHandler}
           className="app__form"
         >
-          <input className="app__search" name = "search" placeholder="Enter your city"></input>
+          <input className="app__search" name = "search" placeholder="Enter your city: CT...Colorado...CA..." required></input>
           <button className="app__button">SEARCH</button>
         </form>
 
         <div className="app__text">
-            <p>
-              {this.state.location.filter((location)=> location.toUpperCase() === this.state.searched)}
+            <p  className="app__text-content">
+             You are currently viewing information on the state of {this.abbrState(this.state.searched, 'name')}
             </p>
         </div>
 
