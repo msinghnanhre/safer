@@ -51,7 +51,7 @@ export class LandingPage extends Component {
       
       <section className="section">
                 <BodyCard/>
-      <form onSubmit = {this.submitHandler}>
+      <form  className = "form" onSubmit = {this.submitHandler}>
         <input className="search" name = "search"></input>
         <button className="search-button">SEARCH</button>
       </form>
