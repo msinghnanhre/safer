@@ -13,7 +13,9 @@
 }
 
     &__logo {
-        width: 120px;
+        width: 130px;
+        position: relative;
+        bottom: 18px;
     }
     &__search{
         @include btn{

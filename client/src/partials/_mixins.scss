@@ -30,9 +30,9 @@
 
 @mixin btn{
     border: none;
-    background-color: #17093F;
+    background-color: #72BBE3;
     border-radius: 20px;
-    color: white;
+    color: #17093F;
     padding: .5rem 1.5rem;
     margin: 1rem;
     @content;
