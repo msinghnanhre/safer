@@ -1,3 +1,8 @@
+import './Header.scss'
+
+import { Link } from 'react-router-dom'
+
+
 import React from 'react'
 import logo from "../../assets/logo.svg"
 import "./Header.scss"

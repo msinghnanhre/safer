@@ -1,5 +1,6 @@
 import './App.scss';
 import React, { Component } from 'react'
+
 import BarChart from "./components/BarChart/BarChart"
 import PieChart from "./components/PieChart/PieChart"
 import axios from "axios"
@@ -234,4 +235,5 @@ export class App extends Component {
 }
 
 export default App
+
 
