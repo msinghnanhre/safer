@@ -40,7 +40,7 @@ function BarChart({data}) {
                     },
                   }}
             />
-            <h5 style={{paddingTop: "2.5rem"}}>Bar Graph</h5>
+            <h5 style={{marginBottom: "5rem"}}>Bar Graph</h5>
         </div>
     )
 }

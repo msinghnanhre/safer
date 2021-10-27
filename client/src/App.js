@@ -196,7 +196,7 @@ export class App extends Component {
         <Header />
         <Hero />
 
-        <Search />
+        {/* <Search /> */}
                 <div className="white">
       <h3 className="white__subtitle">Find out how you are affected in your area</h3>
         <form
@@ -218,7 +218,7 @@ export class App extends Component {
             data={this.state}
             className="app__pieChart"
           />
-            <BarChart data={this.state} />
+            {/* <BarChart data={this.state} /> */}
           <p className="app__chart-text"><span className="app__chart-span">{this.individualsAffectedThroughEmail()}</span>People were affected By Email Breach</p>
         </div>
         <p className="app__body-text">Take the steps to protect youself against an email breach so you don’t fall victim.</p>

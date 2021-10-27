@@ -31,7 +31,7 @@ function PieChart({ data }) {
                         yAxes: [
                           {
                             ticks: {
-                              beginAtZero: true,
+                              beginAtZero: false,
                             },
                           },
                         ],
@@ -39,10 +39,12 @@ function PieChart({ data }) {
             
                         legend: {
                             labels: {
-                                fontSize: 10,
+                                fontSize: 5,
                                 fontColor: "#ffffff", 
                             }
-                        }
+                    }
+                    // height: 100,
+                    // width: 100
                 }}
             />
             <h5 style={{ padding: "2.4rem" }}>Pie Chart</h5>
